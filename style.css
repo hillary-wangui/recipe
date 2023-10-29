@@ -1,0 +1,43 @@
+html{
+     width: 100%;
+     height: 100%;
+     padding: 0;
+     margin: 0;
+}
+
+.meals{
+    height: 100%;
+    width: 100%;
+    background-color: #86A789;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div > div{
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform ease-in-out 0.6s;
+    background-color: #B2C8BA;
+    width: 45%;
+    gap: 4em;
+}
+
+div > div:hover{
+    transform: scale(1.01);
+}
+
+div > div > h3{
+    text-decoration: underline;
+}
+
+.like-dislike-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+   }
+   
+   .comment-section {
+    margin-bottom:5px;
+   }

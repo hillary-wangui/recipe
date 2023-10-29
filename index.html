@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAWM RECIPES</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    fetch("http://localhost:3000/meals")
+    .then(response => response.json())
+    .then(data => {const meals = data
+    const div = document.querySelector(".meals")
+        meals.map(a =>{
+            const card = document.createElement("div")
+            const paragraph = document.createElement("p")
+            const category = document.createElement("p")
+            const area = document.createElement("p")
+            const instructions = document.createElement("p")
+            const header = document.createElement("h3")
+            const image = document.createElement("img")
+            const frame = document.createElement("iframe")
+            category.textContent = a.strCategory
+            area.textContent = a.strArea
+            header.textContent = "Instructions" 
+            instructions.textContent = a.strInstructions
+            image.textContent = a.strSource
+            frame.textContent = a.strYoutube
+            card.appendChild(paragraph)
+            card.appendChild(category)
+            card.appendChild(area)
+            card.appendChild(header)
+            card.appendChild(instructions)
+            card.appendChild(frame)
+            div.appendChild(card)
+
+           
+
+        })})
+    </script>
+</head>
+<body>
+    <div class="meals"> 
+        
+    </div>
+    <div class="like-dislike-section">
+        <button id="like-btn">Like</button>
+        <button id="dislike-btn">Dislike</button>
+     </div>
+     <div class="comment-section">
+        <input type="text" id="comment-input" placeholder="Write a comment...">
+        <button id="submit-comment-btn">Submit</button>
+        <div id="comments"></div>
+     </div>
+     <script src="script.js"></script>
+</body>
+
+</html>
